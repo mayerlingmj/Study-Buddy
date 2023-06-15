@@ -8,7 +8,7 @@
 
 ### By: Camille Marker, Lark Lundberg and Mayerling Joseph
 
-[GithHub]() [Trello]()
+[GithHub]() [Trello](https://trello.com/b/B8qR7XVN/study-buddy-app)
 
 ---
 
