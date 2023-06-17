@@ -8,7 +8,8 @@
 
 ### By: Camille Marker, Lark Lundberg and Mayerling Joseph
 
-[GithHub]() [Trello](https://trello.com/b/B8qR7XVN/study-buddy-app)
+[GithHub](https://github.com/mayerlingmj/Study-Buddy)
+[Trello](https://trello.com/b/B8qR7XVN/study-buddy-app)
 
 ---
 
@@ -25,7 +26,7 @@
 - HTML
 - Django
 - Python
-
+- PSQL
   - Sub-item
 
 1. Item 1
@@ -47,7 +48,7 @@
 
 ### **_Future Updates_**
 
-- [ ] Future Update 1
+- [ ] Set up calendar base recuring study sessions
 - [ ] Future Update 2
 - [x] Completed Update
 - [x] ~~Strikethrough~~ Items Also
