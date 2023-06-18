@@ -2,5 +2,15 @@
 {% block content %}
 
 <h1>Group Details</h1>
+<div class="card">
+  <a href="/study_groups/{{ study_group.id }}">
+    <div class="card-content">
+      <span class="card-title">{{ study_group.name }}</span>
+      <p>Location: {{ study_group.location }}</p>
+      <p>Topic: {{ study_group.topic }}</p>
+      <p>Attending: {{ study_group.attending }}</p>
+    </div>
+  </a>
+</div>
 
 {% endblock %}
