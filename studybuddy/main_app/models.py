@@ -16,17 +16,18 @@ class Study_Group(models.Model):
   location = models.CharField(max_length=100)
   topic = models.CharField(max_length=100)
   school = models.ForeignKey(School, on_delete=models.CASCADE)
+  attending = models.ManyToManyField(User)
 
 class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   school = models.ForeignKey(School, on_delete=models.CASCADE)
-  study_groups = models.ManyToManyField(Study_Group)
 
 # Make sure to add credit to tutorial
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
   if created:
-    Profile.objects.create(user=instance)
+    default = School.objects.get(pk=3)
+    Profile.objects.create(user=instance, school=default)
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
