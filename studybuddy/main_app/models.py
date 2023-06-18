@@ -8,8 +8,9 @@ class Study_Group(models.Model):
   # Storing location as coordinates so we can display with GMaps
   location = models.CharField(max_length=100)
   topic = models.CharField(max_length=100)
-  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  attending = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class School(models.Model):
   name = models.CharField(max_length=100)
   study_groups = models.ForeignKey(Study_Group, on_delete=models.CASCADE)
+  students = models.ForeignKey(User, on_delete=models.CASCADE)
