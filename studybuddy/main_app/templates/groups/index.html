@@ -2,6 +2,7 @@
 
 <h2>My School:</h2>
 <p>{{ user.profile.school.name }}</p>
+<a href="{% url 'school_select'  %}">Select School</a>
 
 <h2>My Subjects:</h2>
 <p>{{ user.profile.selected_topics.all }}</p>
