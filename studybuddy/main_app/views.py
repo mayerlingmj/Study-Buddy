@@ -43,6 +43,7 @@ def detail(request):
 class CreateGroup(CreateView):
     model = Study_Group
     fields = ['name', 'description', 'location', 'topic']
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -54,7 +55,7 @@ class CreateGroup(CreateView):
 
 
 def school_select(request):
-    schools = School.objects.all()
+    schools = School.objects.all().order_by('name')
     return render(request, 'main_app/school_select.html', {
         'schools': schools
     })
