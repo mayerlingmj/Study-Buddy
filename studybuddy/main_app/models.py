@@ -13,6 +13,8 @@ class School(models.Model):
 
 class Study_Group(models.Model):
   # Storing location as coordinates so we can display with GMaps
+  name = models.CharField(max_length=100)
+  description = models.TextField()
   location = models.CharField(max_length=100)
   topic = models.CharField(max_length=100)
   school = models.ForeignKey(School, on_delete=models.CASCADE)
