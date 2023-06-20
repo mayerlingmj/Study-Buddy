@@ -7,7 +7,10 @@
   <div class="card">
     <div class="card-content">
       <span class="card-title">{{ school.name }}</span>
-        <a href="main_app/school_select/{{ school.id }}" class="btn">Select</a>
+      <form action='{{ school.id }}/' method="POST">
+        {% csrf_token %}
+        <input type="submit" name="btn" value="submit">
+      </form>
     </div>
   </div>
 {% endfor %}
