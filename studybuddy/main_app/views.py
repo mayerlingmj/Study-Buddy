@@ -41,8 +41,9 @@ def index(request):
     })
 
 
-def detail(request):
-    return render(request, 'groups/detail.html')
+def detail(request, group_id):
+    study_group = Study_Group.objects.get(id=group_id)
+    return render(request, 'groups/detail.html', {'study_group': study_group})
 
 
 class CreateGroup(CreateView):
