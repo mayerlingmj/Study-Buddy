@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-
-  <h1>Create New Group</h1>
+<style>
+  body{
+    background-image: url('https://i.imgur.com/ffwU0dn.jpg');
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Apple Chancery', cursive;
+  font-size: 34px;
+  }
+</style>
+<h1 style="color: rgb(225, 89, 179); font-weight: bold; text-shadow: 2px 2px 4px #030303; font-family: 'Apple Chancery', cursive;">Create New Group</h1>
 
   <form action="" method="POST">
     {% csrf_token %}
