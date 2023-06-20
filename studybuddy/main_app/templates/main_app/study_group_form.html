@@ -4,7 +4,9 @@
   <h1>Create New Group</h1>
 
   <form action="" method="POST">
+    {% csrf_token %}
     <table>
+      {% csrf_token %}
       {{ form.as_table }}
     </table>
     <input type="submit" value="Create" class="btn">

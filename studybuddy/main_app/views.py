@@ -42,10 +42,14 @@ def detail(request):
 
 class CreateGroup(CreateView):
     model = Study_Group
-    fields = ['name', 'description', 'location', 'topic', 'school']
+    fields = ['name', 'description', 'location', 'topic']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        user = User.objects.get(username=self.request.user)
+        profile = Profile.objects.get(user=user)
+        school = School.objects.get(id=profile.school.id)
+        form.instance.school = school
         return super().form_valid(form)
 
 
