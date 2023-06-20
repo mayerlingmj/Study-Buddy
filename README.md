@@ -14,7 +14,7 @@
 
 ## Mayerling Joseph: [Github](https://github.com/mayerlingmj) [LinkedIn](https://www.linkedin.com/in/mayerling-joseph/)
 
-[GithHub](https://github.com/mayerlingmj/Study-Buddy) [Trello](https://trello.com/b/B8qR7XVN/study-buddy-app)
+[GithHub]() [Trello](https://trello.com/b/B8qR7XVN/study-buddy-app)
 
 ---
 
@@ -29,7 +29,13 @@
 - HTML
 - Django
 - Python
-- PSQL
+
+  - Sub-item
+
+1. Item 1
+2. Item 2
+
+- Sub-item
 
 ---
 
@@ -44,7 +50,10 @@
 
 ### **_Future Updates_**
 
-TBD
+- [ ] Future Update 1
+- [ ] Future Update 2
+- [x] Completed Update
+- [x] ~~Strikethrough~~ Items Also
 
 ### **_Credits_**
 
