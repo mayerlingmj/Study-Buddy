@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect
-from .models import Study_Group
+from .models import Study_Group, School, User, Profile
 
 # Create your views here.
 
@@ -42,7 +42,7 @@ def detail(request):
 
 class CreateGroup(CreateView):
     model = Study_Group
-    fields = ['location', 'topic', 'school']
+    fields = ['name', 'description', 'location', 'topic', 'school']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -50,4 +50,16 @@ class CreateGroup(CreateView):
 
 
 def school_select(request):
-    return render(request, 'main_app/school_select.html')
+    schools = School.objects.all()
+    return render(request, 'main_app/school_select.html', {
+        'schools': schools
+    })
+
+
+def set_school(request, school_id):
+    school = School.objects.get(id=school_id)
+    user = User.objects.get(username=request.user)
+    profile = Profile.objects.get(user=user)
+    profile.school = school
+    profile.save()
+    return redirect('index')
