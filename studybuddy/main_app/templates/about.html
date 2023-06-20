@@ -1,7 +1,48 @@
 {% extends 'base.html' %}
-{% block content %}
 
-<h1>About</h1>
-<p>'Study Buddy' is an interactive study app dedicated to students looking for an easy way to collaborate with their peers on academic study and projects outside of the classroom. By signing up for this free application, students are able to view and join existing study groups pertaining to their respective school, as well as create and manage their own groups. Sign up and let the studying begin!</p>
+{% block content %}
+<style>
+
+body {
+  font-family: Apple Chancery, cursive;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://i.imgur.com/Sy6Z49I.jpg');
+  background-size: 20%;
+}
+  h1 {
+    font-family: Apple Chancery, cursive;
+    color: #e85b95;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family: Apple Chancery, cursive;
+    color: #e85b95;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f4dce6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(236, 102, 178);
+  }
+</style>
+
+<div class="container">
+  <h1>About</h1>
+  <p>'Study Buddy' is an interactive study app dedicated to students looking for an easy way to collaborate with their peers on academic study and projects outside of the classroom. By signing up for this free application, students are able to view and join existing study groups pertaining to their respective school, as well as create and manage their own groups. Sign up and let the studying begin!</p>
+</div>
 
 {% endblock %}
