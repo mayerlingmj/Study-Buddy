@@ -10,9 +10,13 @@ body {
   padding: 20px;
 }
 /* Navigation Styles */
-.navbar {
+.navbar-fixed {
   background-color: #d398b4;
   padding: 10px;
+}
+
+.nav-wrapper {
+  background-color: #d398b4;
 }
 
 .navbar ul {
