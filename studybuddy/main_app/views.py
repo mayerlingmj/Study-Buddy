@@ -33,7 +33,12 @@ def signup(request):
 
 
 def index(request):
-    return render(request, 'groups/index.html')
+    # school = School.objects.get(request.user.profile.school)
+    my_groups = Study_Group.objects.filter(creator=request.user)
+    all_school_groups = Study_Group.objects.filter(attending=request.user)
+    return render(request, 'groups/index.html', {
+        'my_groups': my_groups
+    })
 
 
 def detail(request):
@@ -51,6 +56,7 @@ class CreateGroup(CreateView):
         profile = Profile.objects.get(user=user)
         school = School.objects.get(id=profile.school.id)
         form.instance.school = school
+        form.instance.creator = self.request.user
         return super().form_valid(form)
 
 

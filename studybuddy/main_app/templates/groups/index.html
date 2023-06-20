@@ -8,11 +8,11 @@
 <p>{{ user.profile.selected_topics.all }}</p>
 
 <h3>My Groups:</h3>
-{% for study_group in user.profile.study_groups.all %}
+{% for my_group in my_groups %}
   <div class="card">
-    <a href="{% url 'detail' study_group.id %}">
+    <a href="{% url 'detail' my_group.id %}">
       <div class="card-content">
-        <span class="card-title">{{ study_group.name }}</span>
+        <span class="card-title">{{ my_group.name }}</span>
       </div>
     </a>
   </div>
