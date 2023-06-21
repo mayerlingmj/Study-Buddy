@@ -24,9 +24,18 @@ def about(request):
 
 def set_attending(request, group_id):
     if request.method == 'POST':
-        group = Study_Group.objects.get(id=group_id)
-        group.attending.add(request.user)
-        return redirect('index')
+        is_attending = Study_Group.objects.filter(
+            attending=request.user, id=group_id)
+        if is_attending.count() == 0:
+            group = Study_Group.objects.get(id=group_id)
+            group.attending.add(request.user)
+            return redirect('index')
+        elif is_attending.count() == 1:
+            group = Study_Group.objects.get(id=group_id)
+            group.attending.remove(request.user)
+            return redirect('index')
+        else:
+            return redirect('index')
     else:
         return redirect('index')
 
@@ -62,7 +71,10 @@ def index(request):
 @login_required
 def detail(request, group_id):
     study_group = Study_Group.objects.get(id=group_id)
-    return render(request, 'groups/detail.html', {'study_group': study_group})
+    is_attending = Study_Group.objects.filter(
+        attending=request.user, id=group_id)
+    people_attending = User.objects.filter(attending=group_id)
+    return render(request, 'groups/detail.html', {'study_group': study_group, 'is_attending': is_attending, 'people_attending': people_attending})
 
 
 class CreateGroup(LoginRequiredMixin, CreateView):
