@@ -41,7 +41,7 @@ def signup(request):
 def index(request):
     # school = School.objects.get(request.user.profile.school)
     my_groups = Study_Group.objects.filter(creator=request.user)
-    all_groups = Study_Group.objects.filter(date__gt=datetime.date.today())
+    all_groups = Study_Group.objects.filter(date__gte=datetime.date.today())
     return render(request, 'groups/index.html', {
         'my_groups': my_groups, 'all_groups': all_groups
     })

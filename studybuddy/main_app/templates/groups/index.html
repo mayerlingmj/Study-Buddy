@@ -120,17 +120,4 @@
   </div>
 {% endfor %}
 
-<form>
-  <label for="study_group">Select study group:</label>
-  <select id="study_group"name="study_group">
-    {% for study_group in study_groups %}
-  {% if study_group.school == user.profile.school and study_group.topic in selected_topics %}
-  <option value="{{ study_group.id }}">{{ study_group.name }}</option>
-  {% endif %}
-{% endfor %}
-  </select>
-  <input type="text" name="name"> 
-  <input type="submit" value="Submit">
-</form>
-
 {% endblock %}
