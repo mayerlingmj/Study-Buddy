@@ -4,10 +4,12 @@
 <style>
   body {
     font-family: 'Apple Chancery', cursive;
+    background-image: url('https://i.imgur.com/SnBISd4.jpg');
+    background-size: 25%;
   }
 
   h1 {
-    color: rgb(221, 105, 188);
+    color: rgb(179, 2, 129);
   }
 
   .card {
@@ -17,14 +19,14 @@
   }
 
   .card-title {
-    color: rgb(201, 106, 160);
+    color: rgb(215, 55, 146);
     font-family: 'Apple Chancery', cursive;
     font-size: 24px;
     font-weight: bold;
   }
 
   .card-content {
-    color: rgb(189, 95, 151);
+    color: rgb(194, 53, 137);
     font-family: 'Apple Chancery', cursive;
   }
 
@@ -51,20 +53,34 @@
   <div class="card-action">
     {% if user != study_group.creator %}
       {% if is_attending.count == 0 %}
-        <form method='POST' action="{% url 'set_attending' study_group.id %}">
-          {% csrf_token %}
-          <input type="submit" value="I'm Going!" class="btn">
-        </form>
+      <form method='POST' action="{% url 'set_attending' study_group.id %}">
+        {% csrf_token %}
+        <input type="submit" value="I'm Going!" class="btn pink">
+      </form>
       {% else %}
-        <form method='POST' action="{% url 'set_attending' study_group.id %}">
-          {% csrf_token %}
-          <input type="submit" value="I'm Not Going" class="btn">
-      <a href="{% url 'study_groups_edit' study_group.id %}" style="color: rgb(229, 111, 192);" class="update-link">Update</a>
-      <a href="{% url 'study_groups_delete' study_group.id %}" style="color: rgb(229, 111, 192);" class="delete-link">Delete</a>
-        </form>
+      <form method='POST' action="{% url 'set_attending' study_group.id %}">
+        {% csrf_token %}
+        <input type="submit" value="I'm Not Going" class="btn pink">
+      </form>
       {% endif %}
     {% endif %}
+    {% if user == study_group.creator %}
+    <a href="{% url 'study_groups_edit' study_group.id %}" style="color: rgb(229, 111, 192);" class="update-link">Update</a>
+    <a href="{% url 'study_groups_delete' study_group.id %}" style="color: rgb(229, 111, 192);" class="delete-link">Delete</a>
+    {% endif %}
   </div>
-  </div>
-  
-  {% endblock %}
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
