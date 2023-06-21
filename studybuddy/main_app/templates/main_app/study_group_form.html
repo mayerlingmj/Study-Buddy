@@ -1,25 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
 <style>
-  body{
+  body {
     background-image: url('https://i.imgur.com/ffwU0dn.jpg');
     background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  font-family: 'Apple Chancery', cursive;
-  font-size: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Apple Chancery', cursive;
+    font-size: 34px;
+  }
+
+  .btn {
+    background-color: pink;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: #ff80bf;
   }
 </style>
 <h1 style="color: rgb(225, 89, 179); font-weight: bold; text-shadow: 2px 2px 4px #030303; font-family: 'Apple Chancery', cursive;">Create New Group</h1>
 
-  <form action="" method="POST">
+<form action="" method="POST">
+  {% csrf_token %}
+  <table>
     {% csrf_token %}
-    <table>
-      {% csrf_token %}
-      {{ form.as_table }}
-    </table>
-    <input type="submit" value="Create" class="btn">
-  </form>
+    {{ form.as_table }}
+  </table>
+  <input type="submit" value="Create" class="btn">
+</form>
 
 <script>
   const topicEl = document.getElementById('id_topic')
