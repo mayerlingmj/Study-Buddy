@@ -133,16 +133,4 @@
   <input type="submit" value="Submit">
 </form>
 
-{% for study_group in study_groups %}
-  {% if study_group.school == user.profile.school and study_group.topic in selected_topics %}
-    <div class="card">
-      <a href="{% url 'detail' study_group.id %}">
-        <div class="card-content">
-          <span class="card-title">{{ study_group.name }}</span>
-        </div>
-      </a>
-    </div>
-  {% endif %}
-{% endfor %}
-
 {% endblock %}
