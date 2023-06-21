@@ -10,15 +10,23 @@
     <p>Description: {{study_group.description}}</p>
     <p>Location: {{ study_group.location }}</p>
     <p>Topic: {{ study_group.topic }}</p>
-    <p>Attending: {{ study_group.attending }}</p>
+    <p>Attending: {% for people in people_attending %} {{people}} </p>
+    {% endfor %}
   </div>
   <div class="card-action">
     {% if user != study_group.creator %}
-      <form method='POST' action="{% url 'set_attending' study_group.id %}">
-        {% csrf_token %}
-        <input type="submit" value="I'm Going!" class="btn">
-      </form>
-    {% endif%}
+      {% if is_attending.count == 0 %}
+        <form method='POST' action="{% url 'set_attending' study_group.id %}">
+          {% csrf_token %}
+          <input type="submit" value="I'm Going!" class="btn">
+        </form>
+      {% else %}
+        <form method='POST' action="{% url 'set_attending' study_group.id %}">
+          {% csrf_token %}
+          <input type="submit" value="I'm Not Going" class="btn">
+        </form>
+      {% endif %}
+    {% endif %}
     {% if user == study_group.creator %}
       <a href="{% url 'study_groups_edit' study_group.id %}">Update</a>
       <a href="{% url 'study_groups_delete' study_group.id %}">Delete</a>
