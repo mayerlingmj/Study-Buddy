@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -78,3 +78,8 @@ def set_school(request, school_id):
     profile.school = school
     profile.save()
     return redirect('index')
+
+
+class DeleteGroup(DeleteView):
+    model = Study_Group
+    success_url = '/'

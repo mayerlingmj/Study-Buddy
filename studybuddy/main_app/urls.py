@@ -8,6 +8,8 @@ urlpatterns = [
     path('index', views.index, name='index'),
     path('study_groups/create/', views.CreateGroup.as_view(),
          name='study_groups_create'),
+    path('study_groups/<int:pk>/delete/', views.DeleteGroup.as_view(),
+         name='study_groups_delete'),
     path('school_select/', views.school_select, name='school_select'),
     path('school_select/<int:school_id>/', views.set_school, name='set_school'),
     path('groups/<int:group_id>/', views.detail, name='detail')
