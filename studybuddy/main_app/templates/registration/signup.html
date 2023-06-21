@@ -1,6 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<style>
+  body {
+    font-family: 'Apple Chancery', cursive;
+    color: rgb(166, 0, 119);
+    background-image: url('https://i.imgur.com/JT2Oxty.jpg');
+    background-size: cover;
+  }
+
+  h1 {
+    color: rgb(228, 47, 177);
+  }
+
+  .red-text {
+    color: pink;
+  }
+
+  .btn {
+    background-color: pink;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: #ff80bf;
+  }
+
+  input[type="text"], input[type="password"] {
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  th label{
+    color:#d8237d;
+    font-size: 30px;
+  }
+</style>
 <h1>Sign Up</h1>
 
 <p class="red-text">{{ error_message }}</p>
