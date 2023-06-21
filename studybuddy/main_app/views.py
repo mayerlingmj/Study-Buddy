@@ -3,6 +3,8 @@ from django.views.generic.edit import CreateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from .models import Study_Group, School, User, Profile
 from django.urls import reverse
@@ -33,6 +35,7 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
+@login_required
 def index(request):
     # school = School.objects.get(request.user.profile.school)
     my_groups = Study_Group.objects.filter(creator=request.user)
@@ -42,12 +45,13 @@ def index(request):
     })
 
 
+@login_required
 def detail(request, group_id):
     study_group = Study_Group.objects.get(id=group_id)
     return render(request, 'groups/detail.html', {'study_group': study_group})
 
 
-class CreateGroup(CreateView):
+class CreateGroup(LoginRequiredMixin, CreateView):
     model = Study_Group
     fields = ['name', 'description', 'location', 'topic']
     success_url = '/'
@@ -64,6 +68,7 @@ class CreateGroup(CreateView):
         return super().form_valid(form)
 
 
+@login_required
 def school_select(request):
     schools = School.objects.all().order_by('name')
     return render(request, 'main_app/school_select.html', {
@@ -71,6 +76,7 @@ def school_select(request):
     })
 
 
+@login_required
 def set_school(request, school_id):
     school = School.objects.get(id=school_id)
     user = User.objects.get(username=request.user)
@@ -80,6 +86,6 @@ def set_school(request, school_id):
     return redirect('index')
 
 
-class DeleteGroup(DeleteView):
+class DeleteGroup(LoginRequiredMixin, DeleteView):
     model = Study_Group
     success_url = '/'
