@@ -10,7 +10,7 @@
   }
 
   h1 {
-    color: rgb(228, 47, 177);
+    color: #d8237d;
   }
 
   .red-text {
@@ -31,26 +31,21 @@
     background-color: #ff80bf;
   }
 
-  input[type="text"], input[type="password"] {
-    background-color: pink;
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-  }
   th label{
     color:#d8237d;
     font-size: 30px;
   }
+
 </style>
 <h1>Sign Up</h1>
 
 <p class="red-text">{{ error_message }}</p>
 
-
 <form method="POST" action="{% url 'signup' %}">
+  <table>
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form.as_table }}
+  </table>
   <input type="submit" class="btn" value="Sign Up">
 </form>
 

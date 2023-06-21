@@ -5,12 +5,13 @@
   body {
     font-family: 'Apple Chancery', cursive;
     background-image: url('https://i.imgur.com/SnBISd4.jpg');
-  background-size: 30%;
+  background-size: 28%;
 }
 
 
   h1 {
-    color: rgb(221, 105, 188);
+    color: #e30d7c;
+    text-shadow: 2px 2px 4px #e35ab3;
   }
 
   .btn {
@@ -26,14 +27,22 @@
   .btn:hover {
     background-color: #ff80bf;
   }
+  th label{
+    color:#e30d7c;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px #e685c4;
+  }
+
 </style>
 
 
 <h1>Log In</h1>
 
 <form method="POST" action="{% url 'login' %}">
+  <table>
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form.as_table }}
+  </table>
   <input type="hidden" name="next" value="{{ next }}">
   <button type="submit" class="btn">Log In</button>
 </form>
