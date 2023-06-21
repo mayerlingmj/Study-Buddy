@@ -1,8 +1,33 @@
 {% extends 'base.html' %} 
 {% block content %}
+
+<style>
+  body {
+background-image: url('https://i.imgur.com/NlPnotj.jpg');
+background-size: cover;
+  }
+
+  .pink-card {
+    background-color: rgb(247, 155, 210);
+  }
+  
+  .pink-card .card-title {
+    color: white;
+    font-family: Apple Chancery, cursive;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #e685c4;
+  }
+
+  h2 {
+    color: rgb(210, 56, 141);
+    font-family: Apple Chancery, cursive;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #e685c4;
+  }
+</style>
 <h2>Upcoming Groups about {{ topic.name }}</h2>
 {% for group in filtered_list %}
-  <div class="card">
+  <div class="card pink-card">
     <a href="{% url 'detail' group.id %}">
       <div class="card-content">
         <span class="card-title">
