@@ -15,6 +15,8 @@ class Study_Group(models.Model):
     # Storing location as coordinates so we can display with GMaps
     name = models.CharField(max_length=100)
     description = models.TextField()
+    date = models.DateField()
+    time = models.TimeField()
     location = models.CharField(max_length=100)
     topic = models.CharField(max_length=100)
     school = models.ForeignKey(School, on_delete=models.CASCADE)

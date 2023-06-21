@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -53,7 +53,7 @@ def detail(request, group_id):
 
 class CreateGroup(LoginRequiredMixin, CreateView):
     model = Study_Group
-    fields = ['name', 'description', 'location', 'topic']
+    fields = ['name', 'date', 'time', 'description', 'location', 'topic']
     success_url = '/'
 
     def form_valid(self, form):
@@ -84,6 +84,12 @@ def set_school(request, school_id):
     profile.school = school
     profile.save()
     return redirect('index')
+
+
+class EditGroup(UpdateView):
+    model = Study_Group
+    fields = ['name', 'date', 'time', 'description', 'location', 'topic']
+    success_url = '/'
 
 
 class DeleteGroup(LoginRequiredMixin, DeleteView):
