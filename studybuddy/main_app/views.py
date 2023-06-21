@@ -57,14 +57,18 @@ def signup(request):
 
 @login_required
 def index(request):
-    # school = School.objects.get(request.user.profile.school)
-    my_groups = Study_Group.objects.filter(creator=request.user)
-    attending_groups = Study_Group.objects.filter(attending=request.user)
-    all_groups = Study_Group.objects.filter(date__gte=datetime.date.today())
+    school = School.objects.get(id=request.user.profile.school.id)
+    my_groups = Study_Group.objects.filter(creator=request.user, school=school)
+    attending_groups = Study_Group.objects.filter(
+        attending=request.user, school=school)
+    all_groups = Study_Group.objects.filter(
+        date__gte=datetime.date.today(), school=school)
+    all_topics = Topic.objects.all()
     return render(request, 'groups/index.html', {
         'my_groups': my_groups,
         'all_groups': all_groups,
-        'attending_groups': attending_groups
+        'attending_groups': attending_groups,
+        'all_topics': all_topics
     })
 
 
@@ -122,3 +126,10 @@ class EditGroup(LoginRequiredMixin, UpdateView):
 class DeleteGroup(LoginRequiredMixin, DeleteView):
     model = Study_Group
     success_url = '/'
+
+
+def filter_by_topic(request, topic_id):
+    school = School.objects.get(id=request.user.profile.school.id)
+    filtered_list = Study_Group.objects.filter(topic=topic_id, school=school)
+    topic = Topic.objects.get(id=topic_id)
+    return render(request, 'groups/filter_by_topic.html', {'filtered_list': filtered_list, 'topic': topic})

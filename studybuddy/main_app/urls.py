@@ -16,5 +16,6 @@ urlpatterns = [
     path('study_groups/<int:pk>/edit',
          views.EditGroup.as_view(), name='study_groups_edit'),
     path('study_groups/<int:group_id>/attending',
-         views.set_attending, name='set_attending')
+         views.set_attending, name='set_attending'),
+    path('topic/<int:topic_id>/', views.filter_by_topic, name='filter_by_topic')
 ]
