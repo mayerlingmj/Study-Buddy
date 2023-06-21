@@ -59,14 +59,12 @@
         <form method='POST' action="{% url 'set_attending' study_group.id %}">
           {% csrf_token %}
           <input type="submit" value="I'm Not Going" class="btn">
+      <a href="{% url 'study_groups_edit' study_group.id %}" style="color: rgb(229, 111, 192);" class="update-link">Update</a>
+      <a href="{% url 'study_groups_delete' study_group.id %}" style="color: rgb(229, 111, 192);" class="delete-link">Delete</a>
         </form>
       {% endif %}
     {% endif %}
-    {% if user == study_group.creator %}
-      <a href="{% url 'study_groups_edit' study_group.id %}">Update</a>
-      <a href="{% url 'study_groups_delete' study_group.id %}">Delete</a>
-    {% endif %}
   </div>
-</div>
-
-{% endblock %}
+  </div>
+  
+  {% endblock %}
