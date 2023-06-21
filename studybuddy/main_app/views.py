@@ -5,6 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect
 from .models import Study_Group, School, User, Profile
+from django.urls import reverse
 
 # Create your views here.
 
@@ -58,6 +59,8 @@ class CreateGroup(CreateView):
         school = School.objects.get(id=profile.school.id)
         form.instance.school = school
         form.instance.creator = self.request.user
+        if school.name == 'No School':
+            return redirect(reverse('school_select'))
         return super().form_valid(form)
 
 
