@@ -108,6 +108,17 @@
 {% endfor %}
 
 <h3>All Groups:</h3>
+{% for group in all_groups %}
+  <div class="card">
+    <a href="{% url 'detail' group.id %}">
+      <div class="card-content">
+        <span class="card-title">
+          {{ group.name }}
+        </span>
+      </div>
+    </a>
+  </div>
+{% endfor %}
 
 <form>
   <label for="study_group">Select study group:</label>

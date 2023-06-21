@@ -6,8 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
-from .models import Study_Group, School, User, Profile
+from .models import Study_Group, School, User, Profile, Topic
 from django.urls import reverse
+from django.http import HttpResponse
+import datetime
 
 # Create your views here.
 
@@ -39,9 +41,9 @@ def signup(request):
 def index(request):
     # school = School.objects.get(request.user.profile.school)
     my_groups = Study_Group.objects.filter(creator=request.user)
-    all_school_groups = Study_Group.objects.filter(attending=request.user)
+    all_groups = Study_Group.objects.filter(date__gt=datetime.date.today())
     return render(request, 'groups/index.html', {
-        'my_groups': my_groups
+        'my_groups': my_groups, 'all_groups': all_groups
     })
 
 
@@ -53,7 +55,8 @@ def detail(request, group_id):
 
 class CreateGroup(LoginRequiredMixin, CreateView):
     model = Study_Group
-    fields = ['name', 'date', 'time', 'description', 'location', 'topic']
+    fields = ('name', 'topic', 'date', 'time', 'description', 'location')
+    # topics = Topic.objects.all().values_list('name')
     success_url = '/'
 
     def form_valid(self, form):

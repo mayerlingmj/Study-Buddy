@@ -11,14 +11,21 @@ class School(models.Model):
     name = models.CharField(max_length=100)
 
 
+class Topic(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+
 class Study_Group(models.Model):
     # Storing location as coordinates so we can display with GMaps
     name = models.CharField(max_length=100)
     description = models.TextField()
     date = models.DateField()
-    time = models.TimeField()
+    time = models.CharField(max_length=15)
     location = models.CharField(max_length=100)
-    topic = models.CharField(max_length=100)
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
     creator = models.ForeignKey(
         User, related_name='creator', on_delete=models.CASCADE)
