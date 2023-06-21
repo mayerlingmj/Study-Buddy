@@ -12,5 +12,7 @@ urlpatterns = [
          name='study_groups_delete'),
     path('school_select/', views.school_select, name='school_select'),
     path('school_select/<int:school_id>/', views.set_school, name='set_school'),
-    path('groups/<int:group_id>/', views.detail, name='detail')
+    path('study_groups/<int:group_id>/', views.detail, name='detail'),
+    path('study_groups/<int:pk>/edit',
+         views.EditGroup.as_view(), name='study_groups_edit')
 ]
