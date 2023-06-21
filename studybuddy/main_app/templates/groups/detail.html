@@ -9,6 +9,9 @@
     <p>Topic: {{ study_group.topic }}</p>
     <p>Attending: {{ study_group.attending }}</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'study_groups_delete' study_group.id %}">Delete</a>
+  </div>
 </div>
 
 {% endblock %}
