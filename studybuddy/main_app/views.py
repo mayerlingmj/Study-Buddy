@@ -22,6 +22,15 @@ def about(request):
     return render(request, 'about.html')
 
 
+def set_attending(request, group_id):
+    if request.method == 'POST':
+        group = Study_Group.objects.get(id=group_id)
+        group.attending.add(request.user)
+        return redirect('index')
+    else:
+        return redirect('index')
+
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
@@ -41,9 +50,12 @@ def signup(request):
 def index(request):
     # school = School.objects.get(request.user.profile.school)
     my_groups = Study_Group.objects.filter(creator=request.user)
+    attending_groups = Study_Group.objects.filter(attending=request.user)
     all_groups = Study_Group.objects.filter(date__gte=datetime.date.today())
     return render(request, 'groups/index.html', {
-        'my_groups': my_groups, 'all_groups': all_groups
+        'my_groups': my_groups,
+        'all_groups': all_groups,
+        'attending_groups': attending_groups
     })
 
 

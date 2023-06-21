@@ -13,6 +13,12 @@
     <p>Attending: {{ study_group.attending }}</p>
   </div>
   <div class="card-action">
+    {% if user != study_group.creator %}
+      <form method='POST' action="{% url 'set_attending' study_group.id %}">
+        {% csrf_token %}
+        <input type="submit" value="I'm Going!" class="btn">
+      </form>
+    {% endif%}
     {% if user == study_group.creator %}
       <a href="{% url 'study_groups_edit' study_group.id %}">Update</a>
       <a href="{% url 'study_groups_delete' study_group.id %}">Delete</a>

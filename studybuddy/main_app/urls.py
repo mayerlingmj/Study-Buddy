@@ -14,5 +14,7 @@ urlpatterns = [
     path('school_select/<int:school_id>/', views.set_school, name='set_school'),
     path('study_groups/<int:group_id>/', views.detail, name='detail'),
     path('study_groups/<int:pk>/edit',
-         views.EditGroup.as_view(), name='study_groups_edit')
+         views.EditGroup.as_view(), name='study_groups_edit'),
+    path('study_groups/<int:group_id>/attending',
+         views.set_attending, name='set_attending')
 ]
