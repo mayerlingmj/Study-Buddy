@@ -106,6 +106,15 @@
     </a>
   </div>
 {% endfor %}
+{% for attending_group in attending_groups %}
+  <div class="card">
+    <a href="{% url 'detail' attending_group.id %}">
+      <div class="card-content">
+        <span class="card-title">{{attending_group.name}}</span>
+      </div>
+    </a>
+  </div>
+{% endfor %}
 
 <h3>All Groups:</h3>
 {% for group in all_groups %}
