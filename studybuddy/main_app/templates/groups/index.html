@@ -94,8 +94,12 @@
 <p>{{ user.profile.school.name }}</p>
 <a href="{% url 'school_select'  %}">Select School</a>
 
-<h2>My Topics:</h2>
-<p>{{ user.profile.selected_topics.all }}</p>
+<h3>Filter By Topic:</h3>
+<div id="all-topics">
+  {% for topic in all_topics %}
+    <a class="topic-display" href="{% url 'filter_by_topic' topic.id %}">{{topic.name}}</a>
+  {% endfor %}
+</div>
 
 <h3>My Groups:</h3>
 {% for my_group in my_groups %}
