@@ -108,6 +108,17 @@
 {% endfor %}
 
 <h3>All Groups:</h3>
+{% for group in all_groups %}
+  <div class="card">
+    <a href="{% url 'detail' group.id %}">
+      <div class="card-content">
+        <span class="card-title">
+          {{ group.name }}
+        </span>
+      </div>
+    </a>
+  </div>
+{% endfor %}
 
 <form>
   <label for="study_group">Select study group:</label>
@@ -121,17 +132,5 @@
   <input type="text" name="name"> 
   <input type="submit" value="Submit">
 </form>
-
-{% for study_group in study_groups %}
-  {% if study_group.school == user.profile.school and study_group.topic in selected_topics %}
-    <div class="card">
-      <a href="{% url 'detail' study_group.id %}">
-        <div class="card-content">
-          <span class="card-title">{{ study_group.name }}</span>
-        </div>
-      </a>
-    </div>
-  {% endif %}
-{% endfor %}
 
 {% endblock %}
