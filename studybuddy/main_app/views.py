@@ -101,7 +101,7 @@ def set_school(request, school_id):
     return redirect('index')
 
 
-class EditGroup(UpdateView):
+class EditGroup(LoginRequiredMixin, UpdateView):
     model = Study_Group
     fields = ['name', 'date', 'time', 'description', 'location', 'topic']
     success_url = '/'
@@ -110,3 +110,5 @@ class EditGroup(UpdateView):
 class DeleteGroup(LoginRequiredMixin, DeleteView):
     model = Study_Group
     success_url = '/'
+    if study_group.creator != request.user:
+        return redirect('indez')
