@@ -10,7 +10,9 @@
     <p>Attending: {{ study_group.attending }}</p>
   </div>
   <div class="card-action">
-    <a href="{% url 'study_groups_delete' study_group.id %}">Delete</a>
+    {% if user == study_group.creator %}
+      <a href="{% url 'study_groups_delete' study_group.id %}">Delete</a>
+    {% endif %}
   </div>
 </div>
 
