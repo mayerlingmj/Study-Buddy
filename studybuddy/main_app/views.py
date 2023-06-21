@@ -110,5 +110,9 @@ class EditGroup(LoginRequiredMixin, UpdateView):
 class DeleteGroup(LoginRequiredMixin, DeleteView):
     model = Study_Group
     success_url = '/'
-    if study_group.creator != request.user:
-        return redirect('indez')
+
+    def get(self, request):
+        self.object = self.get_object()
+        study_group = self.object
+        if study_group.creator != request.user:
+            return redirect('index')
