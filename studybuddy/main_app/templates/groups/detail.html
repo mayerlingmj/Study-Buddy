@@ -9,7 +9,7 @@
   }
 
   h1 {
-    color:#e30d7c;
+    color:rgb(124, 115, 185);
   }
 
   .card {
@@ -20,14 +20,14 @@
   }
 
   .card-title {
-    color:#e30d7c;
+    color:rgb(124, 115, 185);
     font-family: Shrikhand, cursive;
     font-size: 24px;
     font-weight: bold;
   }
 
   .card-content p {
-    color: #e30d7c;
+    color: rgb(124, 115, 185);;
     font-family: Shrikhand, cursive;
   }
 
@@ -66,8 +66,8 @@
       {% endif %}
     {% endif %}
     {% if user == study_group.creator %}
-    <a href="{% url 'study_groups_edit' study_group.id %}" style="color: #e30d7c;" class="update-link">Update</a>
-    <a href="{% url 'study_groups_delete' study_group.id %}" style="color: #e30d7c;" class="delete-link">Delete</a>
+    <a href="{% url 'study_groups_edit' study_group.id %}" style="color: rgb(124, 115, 185);" class="update-link">Update</a>
+    <a href="{% url 'study_groups_delete' study_group.id %}" style="color:rgb(124, 115, 185);" class="delete-link">Delete</a>
     {% endif %}
   </div>
 </div>
