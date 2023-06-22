@@ -36,7 +36,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
 
-# Make sure to add credit to tutorial
+# Credit for extending the user profile to this tutorial: https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
 
 
 @receiver(post_save, sender=User)

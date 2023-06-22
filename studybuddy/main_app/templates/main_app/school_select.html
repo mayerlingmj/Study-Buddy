@@ -1,7 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1> All Schools</h1>
+<style>
+
+body {
+    font-family: Shrikhan, cursive;
+    background-image: url('https://i.imgur.com/H9Bo6g5.jpg');
+    background-size: 40%;
+    font-size: larger;
+    color: rgb(212, 0, 138);
+  }
+
+  h1 {
+    font-family: Shrikhan, cursive;
+    font-size: 50%;
+    color: rgb(212, 0, 138);
+  }
+
+  .card {
+    background-color: rgb(252, 198, 231);
+    font-family: Shrikhan, cursive;
+   
+  }
+
+  .submit-button {
+    font-family: Shrikhan, cursive;
+    background-color: rgb(226, 96, 165);
+  }
+
+  .submit-button:hover {
+    background-color: rgb(235, 0, 137);
+
+  }
+
+</style
+
+<h1> All Schools </h1>
 
 {% for school in schools %}
   <div class="card">
@@ -9,7 +43,7 @@
       <span class="card-title">{{ school.name }}</span>
       <form action='{{ school.id }}/' method="POST">
         {% csrf_token %}
-        <input type="submit" name="btn" value="submit">
+        <input type="submit" name="btn" value="submit" class="submit-button">
       </form>
     </div>
   </div>
