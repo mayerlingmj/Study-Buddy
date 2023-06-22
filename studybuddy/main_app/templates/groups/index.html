@@ -144,7 +144,7 @@
     <a href="{% url 'detail' group.id %}">
       <div class="card-content">
         <span class="card-title">
-          {{ group.name }}
+          {{ group.name }}{% if group.creator == user %}☆{% endif %}
         </span>
       </div>
     </a>
