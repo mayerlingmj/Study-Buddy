@@ -3,36 +3,37 @@
 
 <style>
   body {
-    font-family: Shrikhan, cursive;
+    font-family: Shrikhand, cursive;
     background-image: url('https://i.imgur.com/0WfbzWH.jpg');
     background-size: 40%;
   }
 
   h1 {
-    color: rgb(179, 2, 129);
+    color:#e30d7c;
   }
 
   .card {
+    font-family: Shrikhand, cursive;
     background-color: #f4dce6;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgb(236, 102, 178);
   }
 
   .card-title {
-    color: rgb(215, 55, 146);
-    font-family: Shrikhan, cursive;
+    color:#e30d7c;
+    font-family: Shrikhand, cursive;
     font-size: 24px;
     font-weight: bold;
   }
 
   .card-content p {
-    color: rgb(194, 53, 137);
-    font-family: Shrikhan, cursive;
+    color: #e30d7c;
+    font-family: Shrikhand, cursive;
   }
 
   .card-action a {
-    color: pink;
-    font-family: Shrikhan, cursive;
+    color: #e30d7c;
+    font-family: Shrikhand, cursive;
   }
   
 </style>
@@ -65,8 +66,8 @@
       {% endif %}
     {% endif %}
     {% if user == study_group.creator %}
-    <a href="{% url 'study_groups_edit' study_group.id %}" style="color: rgb(229, 111, 192);" class="update-link">Update</a>
-    <a href="{% url 'study_groups_delete' study_group.id %}" style="color: rgb(229, 111, 192);" class="delete-link">Delete</a>
+    <a href="{% url 'study_groups_edit' study_group.id %}" style="color: #e30d7c;" class="update-link">Update</a>
+    <a href="{% url 'study_groups_delete' study_group.id %}" style="color: #e30d7c;" class="delete-link">Delete</a>
     {% endif %}
   </div>
 </div>
