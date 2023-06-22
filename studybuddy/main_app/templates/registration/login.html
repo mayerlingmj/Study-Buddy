@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-
 <style>
   body {
-    font-family: 'Shrikhand', cursive;
-    background-color: ;
-  }
-  
+    font-family: Shrikhand, cursive;
+    background-image: url('https://i.imgur.com/3HHk9ny.jpg');
+    background-size: cover;
+}
   h1 {
-    color: #90cce6;
-    text-shadow: 2px 2px 4px #e35ab3;
+    font-family: Shrikhand, cursive;
+    color: #E30D7C;
+    text-shadow: 2px 2px 4px #E35AB3;
   }
-
   .btn {
     background-color: pink;
     color: white;
@@ -21,21 +20,16 @@
     cursor: pointer;
     border-radius: 5px;
   }
-
   .btn:hover {
-    background-color: #ff80bf;
+    background-color: #FF80BF;
   }
   th label{
     color:#e30d7c;
     font-size: 30px;
-    text-shadow: 2px 2px 4px #e685c4;
+    text-shadow: 2px 2px 4px #E685C4;
   }
-
 </style>
-
-
 <h1>Log In</h1>
-
 <form method="POST" action="{% url 'login' %}">
   <table>
   {% csrf_token %}
@@ -44,5 +38,4 @@
   <input type="hidden" name="next" value="{{ next }}">
   <button type="submit" class="btn">Log In</button>
 </form>
-
 {% endblock %}
