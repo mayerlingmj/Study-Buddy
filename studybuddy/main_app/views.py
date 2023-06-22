@@ -84,7 +84,6 @@ def detail(request, group_id):
 class CreateGroup(LoginRequiredMixin, CreateView):
     model = Study_Group
     fields = ('name', 'topic', 'date', 'time', 'description', 'location')
-    # topics = Topic.objects.all().values_list('name')
     success_url = '/'
 
     def form_valid(self, form):
