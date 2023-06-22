@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   background-size: 20%;
-  
 }
 
 .container {
@@ -44,4 +43,3 @@ body {
 .navbar a:hover {
   background-color: #da6dac;
 }
-
