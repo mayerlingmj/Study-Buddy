@@ -31,12 +31,12 @@
             <li>
               <a
                 href="/"
-                class="left brand-logo"
+                class="left brand-logo" style="font-family: Shrikhand, cursive;"
                 >&nbsp;&nbsp;Study Buddy</a
               >
             </li>
           </ul>
-          <ul class="right">
+          <ul class="right" style="font-family: Shrikhand, cursive;">
             <li><a href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'index' %}">Groups</a></li>
