@@ -1,20 +1,18 @@
 # Study-Buddy
 
-### Date: 06/15/23
-
 # **_Study-Buddy_**
 
 ## **_Date: 06/15/2023_**
 
 ### By:
 
-## Camille Marker: [Github](https://github.com/camillemarker) [LinkedIn](https://www.linkedin.com/in/camillemarker/)
+Camille Marker: [Github](https://github.com/camillemarker) [LinkedIn](https://www.linkedin.com/in/camillemarker/)
 
-## Lark Lundberg: [Github](https://github.com/elizabethlundberg) [LinkedIn]()
+Lark Lundberg: [Github](https://github.com/elizabethlundberg) [LinkedIn]()
 
-## Mayerling Joseph: [Github](https://github.com/mayerlingmj) [LinkedIn](https://www.linkedin.com/in/mayerling-joseph/)
+Mayerling Joseph: [Github](https://github.com/mayerlingmj) [LinkedIn](https://www.linkedin.com/in/mayerling-joseph/)
 
-## [GithHub](https://github.com/mayerlingmj/Study-Buddy) [Trello](https://trello.com/b/B8qR7XVN/study-buddy-app)
+## [GithHub](https://github.com/mayerlingmj/Study-Buddy) | [Trello](https://trello.com/b/B8qR7XVN/study-buddy-app)
 
 ### **_Description_**
 
@@ -32,18 +30,16 @@ The objectives of a study group can vary depending on the specific context and g
 
 ### **_Getting Started_**
 
-#### This application will:
+#### This application has:
 
-- Include a minimum of 3 Django Models (User, School, Group)
-- Have full CRUD operations
-- Integrate user authentication and have protected routes
-- Deployed on Fly.io: https://frosty-paper-254.fly.dev/
+- 4 Django Models (User, School, Group, Topic)
+- Full CRUD integration
+- User authentication and protected routes
+- Deployment on Fly.io: https://frosty-paper-254.fly.dev/
 
 ### **_Future Updates_**
 
 - [ ] Private groups
-- [x] Completed Update
-- [x] ~~Strikethrough~~ Items Also
 
 ### **_Sources:_**
 
