@@ -1,8 +1,6 @@
 # Study-Buddy
 
-# **_Study-Buddy_**
-
-### **_Date: 06/15/2023_**
+### Date: 06/15/2023
 
 ### By:
 
@@ -43,6 +41,6 @@ The objectives of a study group can vary depending on the specific context and g
 
 ### **_Sources:_**
 
-Background Image: Depositphotos.com
-Image source: imgur.com
+Background Image: Depositphotos.com  
+Image source: imgur.com  
 Extending Django user model: Simpleisbetterthancomplex.com
