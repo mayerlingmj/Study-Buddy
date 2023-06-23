@@ -2,15 +2,15 @@
 
 # **_Study-Buddy_**
 
-## **_Date: 06/15/2023_**
+### **_Date: 06/15/2023_**
 
 ### By:
 
-Camille Marker: [Github](https://github.com/camillemarker) [LinkedIn](https://www.linkedin.com/in/camillemarker/)
+Camille Marker: [Github](https://github.com/camillemarker) | [LinkedIn](https://www.linkedin.com/in/camillemarker/)
 
-Lark Lundberg: [Github](https://github.com/elizabethlundberg) [LinkedIn]()
+Lark Lundberg: [Github](https://github.com/elizabethlundberg) | [LinkedIn]()
 
-Mayerling Joseph: [Github](https://github.com/mayerlingmj) [LinkedIn](https://www.linkedin.com/in/mayerling-joseph/)
+Mayerling Joseph: [Github](https://github.com/mayerlingmj) | [LinkedIn](https://www.linkedin.com/in/mayerling-joseph/)
 
 ## [GithHub](https://github.com/mayerlingmj/Study-Buddy) | [Trello](https://trello.com/b/B8qR7XVN/study-buddy-app)
 
@@ -20,11 +20,11 @@ The objectives of a study group can vary depending on the specific context and g
 
 ### **_Technologies Used_**
 
-- JavaScript
-- CSS
-- HTML
 - Django
 - Python
+- CSS
+- HTML
+- JavaScript
 
 ---
 
