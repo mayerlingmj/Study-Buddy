@@ -46,11 +46,11 @@
 - Include a minimum of 3 Django Models (User, School, Group)
 - Have full CRUD operations
 - Integrate user authentication and have protected routes
-- Deployed on Heroku (link eventually)
+- Deployed on Fly.io: https://frosty-paper-254.fly.dev/
 
 ### **_Future Updates_**
 
-- [ ] Future Update 1
+- [ ] Private groups
 - [ ] Future Update 2
 - [x] Completed Update
 - [x] ~~Strikethrough~~ Items Also
@@ -61,4 +61,6 @@ TBD
 
 ### **_Sources:_**
 
-TBD
+Background Image: [Depositphotos] (https://depositphotos.com/155805474/stock-photo-pink-colored-school-things.html) (https://depositphotos.com/382600380/stock-photo-mockup-template-pink-spiral-notebook.html) (https://depositphotos.com/360090028/stock-photo-school-background-notebook-pastel-colorful.html) (https://depositphotos.com/360090028/stock-photo-school-background-notebook-pastel-colorful.html)
+
+Extending Django user model: [Simpleisbetterthancomplex] (https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone)
